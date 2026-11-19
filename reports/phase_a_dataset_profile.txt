@@ -1,0 +1,30 @@
+=== PHASE A: DATASET PROFILING ===
+
+File analyzed: working/working_dataset_small.csv
+Total Rows: 229
+Total Columns: 3
+
+--- COLUMNS & DATA TYPES ---
+ip       object
+class    object
+text     object
+
+--- CLASS DISTRIBUTION ---
+class
+A    177
+N     32
+B     12
+C      4
+E      4
+
+--- MISSING VALUES ---
+ip       0
+class    0
+text     0
+
+--- SAMPLE OF RAW TEXT ---
+Row 0: IP='1.000.000.000' | Class='A' | Text='	<string>1.000.000.000+</string>'
+Row 1: IP='1.0.0.1' | Class='A' | Text='	<key>1.0.0.1</key>'
+Row 2: IP='1.0.0.1' | Class='A' | Text='	<string>1.0.0.1</string>'
+Row 3: IP='1.1.1.1' | Class='A' | Text='	<key>1.1.1.1</key>'
+Row 4: IP='1.1.1.1' | Class='A' | Text='	<string>1.1.1.1</string>'

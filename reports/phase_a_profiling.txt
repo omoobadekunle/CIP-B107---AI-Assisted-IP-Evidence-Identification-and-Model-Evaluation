@@ -1,0 +1,10 @@
+Profiling complete! Report saved to reports/phase_a_dataset_profile.txt
+
+Here is the class distribution we found:
+class
+A    177
+N     32
+B     12
+C      4
+E      4
+Name: count, dtype: int64

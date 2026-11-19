@@ -1,0 +1,68 @@
+=== PHASE E: EVALUATION AND FORENSIC INTERPRETATION ===
+
+--- CONFUSION MATRIX (ML model) ---
+TP=34  FP=1  FN=0  TN=11
+
+Accuracy:  0.9783
+Precision: 0.9714
+Recall:    1.0000
+F1:        0.9855
+Majority baseline: 0.7391
+
+--- 8-RECORD ANALYST REVIEW ---
+
+Record 1: TP
+  Candidate: 2.20.31.4
+  Actual: positive | ML: positive | Rule: positive
+  Note: Clear valid IPv4 in positive context. Both ML and rule agree. Correctly triaged as positive.
+
+Record 2: TP
+  Candidate: 13.3.1.17
+  Actual: positive | ML: positive | Rule: positive
+  Note: Clear valid IPv4 in positive context. Both ML and rule agree. Correctly triaged as positive.
+
+Record 3: TN
+  Candidate: 608.80.24.1
+  Actual: negative | ML: negative | Rule: negative
+  Note: Invalid IPv4 syntax. Both ML and rule correctly rejected.
+
+Record 4: TN
+  Candidate: 257.0.1.38
+  Actual: negative | ML: negative | Rule: negative
+  Note: Invalid IPv4 syntax. Both ML and rule correctly rejected.
+
+Record 5: TN (ML beat rule)
+  Candidate: 0.0.0.0
+  Actual: negative | ML: negative | Rule: positive
+  Note: 0.0.0.0 passes IPv4 syntax (rule => positive) but is the unspecified address. Source label negative. ML correctly used context.
+
+Record 6: TN (ML beat rule)
+  Candidate: 0.0.0.0
+  Actual: negative | ML: negative | Rule: positive
+  Note: 0.0.0.0 passes IPv4 syntax (rule => positive) but is the unspecified address. Source label negative. ML correctly used context.
+
+Record 7: FP
+  Candidate: 256.0.1.26
+  Actual: negative | ML: positive | Rule: negative
+  Note: INVALID IPv4 (octet 256 > 255). Rule correctly rejected. ML incorrectly flagged positive because it sees a 4-group digit pattern in <string> tag context.
+
+
+--- COUNTEREXAMPLE: HIGH ACCURACY ON IMBALANCED DATA ---
+The majority-class baseline (always predict 'positive') scores 73.91%.
+A model that predicts 'positive' for every record would score 0.7391
+and yet identify zero true negatives. Its accuracy is high but its
+operational value is zero for detecting negatives.
+
+For forensic triage, this matters: a false negative (missing a true
+IP evidence candidate) could mean relevant evidence is excluded.
+A false positive (flagging a version string as an IP) wastes analyst
+time and may contaminate downstream intelligence.
+
+--- FALSE NEGATIVE CONSEQUENCES ---
+The ML model produced zero false negatives on this test set, but the
+rule baseline missed 2 negatives. In a larger deployment, a false
+negative for an IP evidence candidate means the address is dropped
+before analyst review. This is worse than a false positive, which
+only costs review time. Appropriate escalation: any candidate that
+ML and rule disagree on should be escalated to an analyst rather
+than resolved automatically.

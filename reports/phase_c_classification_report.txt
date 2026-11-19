@@ -1,0 +1,13 @@
+=== PHASE C: CLASSIFICATION REPORT ===
+
+              precision    recall  f1-score   support
+
+           A       0.94      0.94      0.94        36
+           B       0.67      1.00      0.80         2
+           C       1.00      1.00      1.00         1
+           E       1.00      1.00      1.00         1
+           N       0.80      0.67      0.73         6
+
+    accuracy                           0.91        46
+   macro avg       0.88      0.92      0.89        46
+weighted avg       0.92      0.91      0.91        46

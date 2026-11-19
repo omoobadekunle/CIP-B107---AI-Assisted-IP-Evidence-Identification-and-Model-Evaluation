@@ -1,0 +1,14 @@
+=== PHASE A: JSONL PROFILING ===
+
+Training records: 183
+Testing records:  46
+
+--- LABEL BALANCE (TRAIN) ---
+completion
+positive    163
+negative     20
+
+--- LABEL BALANCE (TEST) ---
+completion
+positive    34
+negative    12

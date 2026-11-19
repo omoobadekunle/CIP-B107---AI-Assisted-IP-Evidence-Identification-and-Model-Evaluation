@@ -1,0 +1,28 @@
+=== EXECUTIVE BRIEFING: AI-ASSISTED IP EVIDENCE IDENTIFICATION ===
+
+TO: Senior Management / Stakeholders
+FROM: Adekunle Ogunyemi (Digital Forensics Examiner)
+DATE: 2026-11-18
+
+1. PURPOSE:
+This briefing summarizes the findings from the offline machine learning investigation into IP address classification. The goal was to determine if an AI model could reliably identify and classify IP addresses from raw text evidence.
+
+2. METHODOLOGY:
+- Evidence Preservation: 5 supplied files were hashed using SHA-256 and verified for integrity.
+- Data Extraction: 212 IP-like strings were extracted from the dataset. Using Python validation, 14 invalid strings (e.g., octets > 255, leading zeros, URL paths) were filtered out, leaving 198 valid IPv4 addresses.
+- Model Training: An offline Random Forest Classifier was trained on the dataset.
+
+3. KEY FINDINGS:
+- Model Performance: The classifier achieved an overall accuracy of 91%.
+- Class Imbalance: The dataset was heavily imbalanced (Class A dominated with 77%). The model struggled most with Class N (Recall 0.67), indicating it missed several Class N IPs.
+- Historical Logs: The historical fine-tuning logs showed 100% training accuracy. However, this only proves the model memorized the training data and provides NO evidence of real-world reliability.
+- Validation is Critical: The model incorrectly classified an invalid IP (256.0.1.26) because it treats IPs as text patterns, not validated network addresses.
+
+4. RECOMMENDATIONS:
+- Always use rule-based validation (e.g., Python's ipaddress module) BEFORE feeding data to an ML model.
+- Address class imbalance in future training (e.g., using SMOTE or collecting more data for rare classes).
+- Do not rely on training accuracy alone. Always use a hold-out test set and evaluate using Confusion Matrices.
+- Do not execute the legacy upload/prediction scripts due to embedded credentials and outdated API patterns.
+
+5. CONCLUSION:
+AI can assist in IP extraction, but human forensic validation remains essential. The offline model provides a good baseline (91% accuracy), but the 4 misclassifications highlight the need for continuous validation and balancing of the dataset.

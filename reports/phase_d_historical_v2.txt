@@ -1,0 +1,37 @@
+=== PHASE D: HISTORICAL FINE-TUNING EVIDENCE ===
+
+Source files: fine_tuning_steps.txt (49 steps) and result.csv (733 steps)
+Note: fine_tuning_steps.txt is a truncated view of the longer result.csv run.
+
+--- RUN LENGTH ---
+Total training steps: 733
+Total elapsed tokens: 34661
+Total elapsed examples: 733
+
+--- TRAINING vs VALIDATION ---
+Training accuracy reaches 1.0 by step 5 and stays there for all 733 steps.
+Validation loss recorded only 92 times (sporadic validation).
+The 1.0 training accuracy indicates memorisation, not generalisation.
+
+--- FINAL CLASSIFICATION METRICS (from result.csv, step 733) ---
+  classification/accuracy       : 0.97826087474823
+  classification/precision      : 0.9714285714285714
+  classification/recall         : 1.0
+  classification/auroc          : 0.9975490196078431
+  classification/auprc          : 0.999147305981216
+  classification/f1.0           : 0.9855072463768115
+
+IMPORTANT: The final accuracy of 0.9783 matches the fresh ML holdout
+result. This is because both use the same test set, which contains
+11 exact prompt overlaps with the training set. The historical
+accuracy is inflated by the same leakage as our fresh run.
+
+--- WHAT CANNOT BE CONCLUDED ---
+1. The 1.0 training accuracy does NOT prove real-world reliability.
+2. The AUROC of 0.9975 is high but measured on a leaky test set.
+3. The historical 'ada' model used legacy OpenAI API endpoints that
+   are no longer current. The workflow (upload -> create job -> poll
+   status -> predict) cannot be reproduced with the supplied scripts
+   because they contain embedded credentials and obsolete API patterns.
+4. This is a HISTORICAL result, not a student-run model. It must not
+   be presented as the student's own fine-tuning output.

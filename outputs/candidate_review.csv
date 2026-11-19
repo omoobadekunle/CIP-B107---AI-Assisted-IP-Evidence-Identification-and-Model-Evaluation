@@ -1,0 +1,230 @@
+source_row,context,candidate,regex_match,ipv4_valid,source_label,analyst_note
+0,<string>1.000.000.000+</string>,1.000.000.000,True,False,positive,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+1,<key>1.0.0.1</key>,1.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+2,<string>1.0.0.1</string>,1.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+3,<key>1.1.1.1</key>,1.1.1.1,True,True,positive,Valid IPv4 and source-labelled positive
+4,<string>1.1.1.1</string>,1.1.1.1,True,True,positive,Valid IPv4 and source-labelled positive
+5,<string>3608.80.24.1.8</string>,608.80.24.1,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+6,<string>eng-USA-1.0.0.14-20170731</string>,1.0.0.14,True,True,positive,Valid IPv4 and source-labelled positive
+7,<string>cmn-CHN-1.0.0.12-20170804</string>,1.0.0.12,True,True,positive,Valid IPv4 and source-labelled positive
+8,<string>3.6.1.4</string>,3.6.1.4,True,True,positive,Valid IPv4 and source-labelled positive
+9,<string>3608.80.24.1.8</string>,608.80.24.1,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+10,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+11,<string>100.73.156.224</string>,100.73.156.224,True,True,positive,Valid IPv4 and source-labelled positive
+12,<string>obfs4 192.95.36.142:443 CDF2E852BF539B82BD10E27E9115A31734E378C2 cert=qUVQ0srL1JI/vO6V6m/24anYXiJD3QP2HgzUKQtQ7GRqqUvs7P+tG43RtAqdhLOALP7DJQ iat-mode=1</string>,192.95.36.142,True,True,positive,Valid IPv4 and source-labelled positive
+13,<string>obfs4 38.229.1.78:80 C8CBDB2464FC9804A69531437BCF2BE31FDD2EE4 cert=Hmyfd2ev46gGY7NoVxA9ngrPF2zCZtzskRTzoWXbxNkzeVnGFPWmrTtILRyqCTjHR+s9dg iat-mode=1</string>,38.229.1.78,True,True,positive,Valid IPv4 and source-labelled positive
+14,<string>obfs4 38.229.33.83:80 0BAC39417268B96B9F514E7F63FA6FBA1A788955 cert=VwEFpk9F/UN9JED7XpG1XOjm/O8ZCXK80oPecgWnNDZDv5pdkhq1OpbAH0wNqOT6H6BmRQ iat-mode=1</string>,38.229.33.83,True,True,positive,Valid IPv4 and source-labelled positive
+15,<string>obfs4 37.218.240.34:40035 88CD36D45A35271963EF82E511C8827A24730913 cert=eGXYfWODcgqIdPJ+rRupg4GGvVGfh25FWaIXZkit206OSngsp7GAIiGIXOJJROMxEqFKJg iat-mode=1</string>,37.218.240.34,True,True,positive,Valid IPv4 and source-labelled positive
+16,<string>obfs4 37.218.245.14:38224 D9A82D2F9C2F65A18407B1D2B764F130847F8B5D cert=bjRaMrr1BRiAW8IE9U5z27fQaYgOhX1UCmOpg2pFpoMvo6ZgQMzLsaTzzQNTlm7hNcb+Sg iat-mode=0</string>,37.218.245.14,True,True,positive,Valid IPv4 and source-labelled positive
+17,<string>obfs4 85.31.186.98:443 011F2599C0E9B27EE74B353155E244813763C3E5 cert=ayq0XzCwhpdysn5o0EyDUbmSOx3X/oTEbzDMvczHOdBJKlvIdHHLJGkZARtT4dcBFArPPg iat-mode=0</string>,85.31.186.98,True,True,positive,Valid IPv4 and source-labelled positive
+18,<string>obfs4 85.31.186.26:443 91A6354697E6B02A386312F68D82CF86824D3606 cert=PBwr+S8JTVZo6MPdHnkTwXJPILWADLqfMGoVvhZClMq/Urndyd42BwX9YFJHZnBB3H0XCw iat-mode=0</string>,85.31.186.26,True,True,positive,Valid IPv4 and source-labelled positive
+19,<string>obfs4 216.252.162.21:46089 0DB8799466902192B6C7576D58D4F7F714EC87C1 cert=XPUwcQPxEXExHfJYX58gZXN7mYpos7VNAHbkgERNFg+FCVNzuYo1Wp+uMscl3aR9hO2DRQ iat-mode=0</string>,216.252.162.21,True,True,positive,Valid IPv4 and source-labelled positive
+20,<string>obfs4 144.217.20.138:80 FB70B257C162BF1038CA669D568D76F5B7F0BABB cert=vYIV5MgrghGQvZPIi1tJwnzorMgqgmlKaB77Y3Z9Q/v94wZBOAXkW+fdx4aSxLVnKO+xNw iat-mode=0</string>,144.217.20.138,True,True,positive,Valid IPv4 and source-labelled positive
+21,<string>obfs4 193.11.166.194:27015 2D82C2E354D531A68469ADF7F878FA6060C6BACA cert=4TLQPJrTSaDffMK7Nbao6LC7G9OW/NHkUwIdjLSS3KYf0Nv4/nQiiI8dY2TcsQx01NniOg iat-mode=0</string>,193.11.166.194,True,True,positive,Valid IPv4 and source-labelled positive
+22,<string>obfs4 193.11.166.194:27020 86AC7B8D430DAC4117E9F42C9EAED18133863AAF cert=0LDeJH4JzMDtkJJrFphJCiPqKx7loozKN7VNfuukMGfHO0Z8OGdzHVkhVAOfo1mUdv9cMg iat-mode=0</string>,193.11.166.194,True,True,positive,Valid IPv4 and source-labelled positive
+23,<string>obfs4 193.11.166.194:27025 1AE2C08904527FEA90C4C4F8C1083EA59FBC6FAF cert=ItvYZzW5tn6v3G4UnQa6Qz04Npro6e81AP70YujmK/KXwDFPTs3aHXcHp4n8Vt6w/bv8cA iat-mode=0</string>,193.11.166.194,True,True,positive,Valid IPv4 and source-labelled positive
+24,<string>obfs4 209.148.46.65:443 74FAD13168806246602538555B5521A0383A1875 cert=ssH+9rP8dG2NLDN2XuFw63hIO/9MNNinLmxQDpVa+7kTOa9/m+tGWT1SmSYpQ9uTBGa6Hw iat-mode=0</string>,209.148.46.65,True,True,positive,Valid IPv4 and source-labelled positive
+25,<string>obfs4 146.57.248.225:22 10A6CD36A537FCE513A322361547444B393989F0 cert=K1gDtDAIcUfeLqbstggjIw2rtgIKqdIhUlHp82XRqNSq/mtAjp1BIC9vHKJ2FAEpGssTPw iat-mode=0</string>,146.57.248.225,True,True,positive,Valid IPv4 and source-labelled positive
+26,<string>3.3.7.0</string>,3.3.7.0,True,True,positive,Valid IPv4 and source-labelled positive
+27,<string>https://pm-gateway.supersonicads.com/auction?appKey=67052255&amp,SDKVersion=6.8.4.2&amp;initCountry=US&amp;platform=iphone&amp;advId=0D99ABE9-B1D0-41C1-8C45-2681A498AD97</string>;6.8.4.2,True,False,positive,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+28,<string>3.3.7.0</string>,3.3.7.0,True,True,positive,Valid IPv4 and source-labelled positive
+29,<string>6.8.4.2</string>,6.8.4.2,True,True,positive,Valid IPv4 and source-labelled positive
+30,<string>6.8.4.2</string>,6.8.4.2,True,True,positive,Valid IPv4 and source-labelled positive
+31,<key>Sticker_2.19.40.12</key>,2.19.40.12,True,True,positive,Valid IPv4 and source-labelled positive
+32,<key>Sticker_2.19.20.2</key>,2.19.20.2,True,True,positive,Valid IPv4 and source-labelled positive
+33,<key>Sticker_2.19.40.24</key>,2.19.40.24,True,True,positive,Valid IPv4 and source-labelled positive
+34,<string>Sticker_2.19.40.24</string>,2.19.40.24,True,True,positive,Valid IPv4 and source-labelled positive
+35,<string>17.57.144.52</string>,17.57.144.52,True,True,positive,Valid IPv4 and source-labelled positive
+36,<key>1.0.0.1</key>,1.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+37,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+38,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+39,<string>135.0.0.22.118 (206072521)</string>,135.0.0.22,True,True,positive,Valid IPv4 and source-labelled positive
+40,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+41,<string>3608.80.24.1.8</string>,608.80.24.1,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+42,<string>3608.80.24.1.8</string>,608.80.24.1,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+43,<string>135.0.0.22.118</string>,135.0.0.22,True,True,positive,Valid IPv4 and source-labelled positive
+44,<string>135.0.0.22.118 (206072690)</string>,135.0.0.22,True,True,positive,Valid IPv4 and source-labelled positive
+45,<string>135.0.0.22.118 (206072521)</string>,135.0.0.22,True,True,positive,Valid IPv4 and source-labelled positive
+46,<string>http://en-us-support.belkin.com/euf/rightnow/js/10.5.0.1.6.137/min/RightNow.js</string>,10.5.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+47,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+48,<string>cmn-CHN-4.1.1.0-20160421</string>,4.1.1.0,True,True,positive,Valid IPv4 and source-labelled positive
+49,<string>eng-USA-4.1.1.5-20160919</string>,4.1.1.5,True,True,positive,Valid IPv4 and source-labelled positive
+50,<string>eng-USA-4.1.1.5-20160919</string>,4.1.1.5,True,True,positive,Valid IPv4 and source-labelled positive
+51,<string>spa-USA-4.1.0.2-20160424</string>,4.1.0.2,True,True,positive,Valid IPv4 and source-labelled positive
+52,<string>rus-RUS-4.1.0.2-20160422</string>,4.1.0.2,True,True,positive,Valid IPv4 and source-labelled positive
+53,<string>tur-TUR-4.1.0.3-20160422</string>,4.1.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+54,<string>eng-USA-OfflineIOS-6.0.0.2-20191003</string>,6.0.0.2,True,True,positive,Valid IPv4 and source-labelled positive
+55,<string>cmn-CHN-4.1.1.0-20160421</string>,4.1.1.0,True,True,positive,Valid IPv4 and source-labelled positive
+56,<string>yue-HKG-4.1.0.2-20160424</string>,4.1.0.2,True,True,positive,Valid IPv4 and source-labelled positive
+57,<string>eng-USA-5.2.0.2-20170705</string>,5.2.0.2,True,True,positive,Valid IPv4 and source-labelled positive
+58,<string>spa-ESP-5.0.0.1-20170310</string>,5.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+59,<string>eng-USA-5.3.0.3-20180129</string>,5.3.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+60,<string>cmn-CHN-OfflineIOS-5.0.0.1-20180624</string>,5.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+61,<string>eng-USA-OfflineIOS-5.3.0.1-20190209</string>,5.3.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+62,<string>eng-USA-OfflineIOS-5.3.0.1-20190530</string>,5.3.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+63,<string>cmn-CHN-OfflineIOS-5.0.0.1-20180925</string>,5.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+64,<string>eng-GBR-4.1.0.1-20160422</string>,4.1.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+65,<string>ita-ITA-4.1.0.1-20160422</string>,4.1.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+66,<string>por-BRA-4.1.0.4-20160424</string>,4.1.0.4,True,True,positive,Valid IPv4 and source-labelled positive
+67,<string>eng-IND-4.1.0.1-20160424</string>,4.1.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+68,<string>fra-FRA-OfflineIOS-6.0.0.4-20191114</string>,6.0.0.4,True,True,positive,Valid IPv4 and source-labelled positive
+69,<string>deu-DEU-OfflineIOS-6.0.0.3-20191114</string>,6.0.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+70,<string>eng-AUS-OfflineIOS-6.0.0.1-20191215</string>,6.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+71,<string>kor-KOR-OfflineIOS-5.0.0.3-20191215</string>,5.0.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+72,<string>spa-ESP-OfflineIOS-6.0.0.2-20191120</string>,6.0.0.2,True,True,positive,Valid IPv4 and source-labelled positive
+73,<string>spa-USA-OfflineIOS-6.0.0.3-20190831</string>,6.0.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+74,<string>cmn-CHN-OfflineIOS-6.0.0.0-20191009</string>,6.0.0.0,True,True,positive,Valid IPv4 and source-labelled positive
+75,<string>jpn-JPN-OfflineIOS-6.0.0.3-20191024</string>,6.0.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+76,<string>rus-RUS-OfflineIOS-5.0.0.4-20190930</string>,5.0.0.4,True,True,positive,Valid IPv4 and source-labelled positive
+77,<string>tur-TUR-OfflineIOS-5.0.0.1-20190928</string>,5.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+78,<string>yue-HKG-OfflineIOS-6.0.0.2-20190901</string>,6.0.0.2,True,True,positive,Valid IPv4 and source-labelled positive
+79,<string>eng-GBR-6.0.0.1-20190729</string>,6.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+80,<string>ita-ITA-5.1.1.0-20190729</string>,5.1.1.0,True,True,positive,Valid IPv4 and source-labelled positive
+81,<string>por-BRA-5.0.0.2-20190729</string>,5.0.0.2,True,True,positive,Valid IPv4 and source-labelled positive
+82,<string>eng-IND-6.0.0.5-20190907</string>,6.0.0.5,True,True,positive,Valid IPv4 and source-labelled positive
+83,<string>ara-XWW-OfflineIOS-6.0.0.0-20200227</string>,6.0.0.0,True,True,positive,Valid IPv4 and source-labelled positive
+84,<string>tur-TUR-OfflineIOS-5.0.0.1-20200229</string>,5.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+85,<string>deu-DEU-OfflineIOS-7.0.0.3-20200323</string>,7.0.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+86,<string>eng-GBR-OfflineIOS-7.0.0.3-20200323</string>,7.0.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+87,<string>eng-USA-OfflineIOS-7.0.0.4-20200319</string>,7.0.0.4,True,True,positive,Valid IPv4 and source-labelled positive
+88,<string>spa-ESP-OfflineIOS-7.0.0.3-20200323</string>,7.0.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+89,<string>fra-FRA-OfflineIOS-7.0.0.3-20200323</string>,7.0.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+90,<string>jpn-JPN-OfflineIOS-7.0.0.3-20200323</string>,7.0.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+91,<string>cmn-CHN-OfflineIOS-7.0.0.3-20200323</string>,7.0.0.3,True,True,positive,Valid IPv4 and source-labelled positive
+92,<string>Snapchat/10.78.6.0 (iPhone8_4,iOS 13.4.1; gzip)</string>;10.78.6.0,True,False,positive,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+93,<string>10.78.6.0</string>,10.78.6.0,True,True,positive,Valid IPv4 and source-labelled positive
+94,<string>10.22.22.1</string>,10.22.22.1,True,True,positive,Valid IPv4 and source-labelled positive
+95,<string>10.68.68.22</string>,10.68.68.22,True,True,positive,Valid IPv4 and source-labelled positive
+96,<string>10.22.22.1</string>,10.22.22.1,True,True,positive,Valid IPv4 and source-labelled positive
+97,<string>216.239.36.126</string>,216.239.36.126,True,True,positive,Valid IPv4 and source-labelled positive
+98,<string>10.78.6.0</string>,10.78.6.0,True,True,positive,Valid IPv4 and source-labelled positive
+99,<string>Snapchat/10.78.6.0 (iPhone8_4,iOS 13.4.1; gzip)</string>;10.78.6.0,True,False,positive,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+100,<string>216.239.36.126</string>,216.239.36.126,True,True,positive,Valid IPv4 and source-labelled positive
+101,<string>52.207.89.96_52.207.21.88_52.4.205.231_52.5.37.1_52.4.79.247_52.22.144.146_52.3.185.35_52.21.187.77</string>,52.207.89.96,True,True,positive,Valid IPv4 and source-labelled positive
+102,<string>52.207.89.96_52.207.21.88_52.4.205.231_52.5.37.1_52.4.79.247_52.22.144.146_52.3.185.35_52.21.187.77</string>,52.207.21.88,True,True,positive,Valid IPv4 and source-labelled positive
+103,<string>52.207.89.96_52.207.21.88_52.4.205.231_52.5.37.1_52.4.79.247_52.22.144.146_52.3.185.35_52.21.187.77</string>,52.4.205.231,True,True,positive,Valid IPv4 and source-labelled positive
+104,<string>52.207.89.96_52.207.21.88_52.4.205.231_52.5.37.1_52.4.79.247_52.22.144.146_52.3.185.35_52.21.187.77</string>,52.5.37.1,True,True,positive,Valid IPv4 and source-labelled positive
+105,<string>52.207.89.96_52.207.21.88_52.4.205.231_52.5.37.1_52.4.79.247_52.22.144.146_52.3.185.35_52.21.187.77</string>,52.4.79.247,True,True,positive,Valid IPv4 and source-labelled positive
+106,<string>52.207.89.96_52.207.21.88_52.4.205.231_52.5.37.1_52.4.79.247_52.22.144.146_52.3.185.35_52.21.187.77</string>,52.22.144.146,True,True,positive,Valid IPv4 and source-labelled positive
+107,<string>52.207.89.96_52.207.21.88_52.4.205.231_52.5.37.1_52.4.79.247_52.22.144.146_52.3.185.35_52.21.187.77</string>,52.3.185.35,True,True,positive,Valid IPv4 and source-labelled positive
+108,<string>52.207.89.96_52.207.21.88_52.4.205.231_52.5.37.1_52.4.79.247_52.22.144.146_52.3.185.35_52.21.187.77</string>,52.21.187.77,True,True,positive,Valid IPv4 and source-labelled positive
+109,<string>216.239.36.126</string>,216.239.36.126,True,True,positive,Valid IPv4 and source-labelled positive
+110,<string>35.186.197.135</string>,35.186.197.135,True,True,positive,Valid IPv4 and source-labelled positive
+111,<string>35.190.43.134</string>,35.190.43.134,True,True,positive,Valid IPv4 and source-labelled positive
+112,<string>35.186.197.135</string>,35.186.197.135,True,True,positive,Valid IPv4 and source-labelled positive
+113,<string>35.186.197.135</string>,35.186.197.135,True,True,positive,Valid IPv4 and source-labelled positive
+114,<string>3.213.65.77</string>,3.213.65.77,True,True,positive,Valid IPv4 and source-labelled positive
+115,<string>3.94.245.242</string>,3.94.245.242,True,True,positive,Valid IPv4 and source-labelled positive
+116,<string>172.217.8.20</string>,172.217.8.20,True,True,positive,Valid IPv4 and source-labelled positive
+117,<string>3.94.245.242</string>,3.94.245.242,True,True,positive,Valid IPv4 and source-labelled positive
+118,<string>216.239.36.126</string>,216.239.36.126,True,True,positive,Valid IPv4 and source-labelled positive
+119,<string>172.217.8.20</string>,172.217.8.20,True,True,positive,Valid IPv4 and source-labelled positive
+120,<string>216.239.36.126</string>,216.239.36.126,True,True,positive,Valid IPv4 and source-labelled positive
+121,<string>15.21.2.14594</string>,15.21.2.145,True,True,positive,Valid IPv4 and source-labelled positive
+122,<string>8.58.0.93</string>,8.58.0.93,True,True,positive,Valid IPv4 and source-labelled positive
+123,<string>http://en-us-support.belkin.com/euf/rightnow/js/10.5.0.1.6.137/min/RightNow.js</string>,10.5.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+124,<string>8.58.0.93</string>,8.58.0.93,True,True,positive,Valid IPv4 and source-labelled positive
+125,<string>2.20.31.4</string>,2.20.31.4,True,True,positive,Valid IPv4 and source-labelled positive
+126,<string>10.78.6.0</string>,10.78.6.0,True,True,positive,Valid IPv4 and source-labelled positive
+127,<string>http://en-us-support.belkin.com/euf/rightnow/js/10.5.0.1.6.137/min/RightNow.js</string>,10.5.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+128,<string>255.255.255.255</string>,255.255.255.255,True,True,positive,Valid IPv4 and source-labelled positive
+129,<string>0.0.0.0</string>,0.0.0.0,True,True,negative,Valid IPv4 but source-labelled negative (ambiguous)
+130,<string>255.255.255.255</string>,255.255.255.255,True,True,positive,Valid IPv4 and source-labelled positive
+131,<string>0.0.0.0</string>,0.0.0.0,True,True,negative,Valid IPv4 but source-labelled negative (ambiguous)
+132,<string>3.6.1.4</string>,3.6.1.4,True,True,positive,Valid IPv4 and source-labelled positive
+133,<string>609.1.20.0.9</string>,609.1.20.0,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+134,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+135,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+136,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+137,<string>MoPub-6.9.4.0</string>,6.9.4.0,True,True,positive,Valid IPv4 and source-labelled positive
+138,<string>7.4.2.6</string>,7.4.2.6,True,True,positive,Valid IPv4 and source-labelled positive
+139,<string>135.0.0.22.118</string>,135.0.0.22,True,True,positive,Valid IPv4 and source-labelled positive
+140,<string>2.20.31.4</string>,2.20.31.4,True,True,positive,Valid IPv4 and source-labelled positive
+141,<string>0.5.1.3</string>,0.5.1.3,True,True,negative,Valid IPv4 but source-labelled negative (ambiguous)
+142,<string>0.6.7.8</string>,0.6.7.8,True,True,negative,Valid IPv4 but source-labelled negative (ambiguous)
+143,<string>10.78.6.0</string>,10.78.6.0,True,True,positive,Valid IPv4 and source-labelled positive
+144,<string>8.58.0.93</string>,8.58.0.93,True,True,positive,Valid IPv4 and source-labelled positive
+145,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+146,<string>20.10.0.8</string>,20.10.0.8,True,True,positive,Valid IPv4 and source-labelled positive
+147,<string>2.20.31.4</string>,2.20.31.4,True,True,positive,Valid IPv4 and source-labelled positive
+148,<string>15.21.2.14594</string>,15.21.2.145,True,True,positive,Valid IPv4 and source-labelled positive
+149,<string>10.78.6.0</string>,10.78.6.0,True,True,positive,Valid IPv4 and source-labelled positive
+150,<string>3.6.1.4</string>,3.6.1.4,True,True,positive,Valid IPv4 and source-labelled positive
+151,<key>1.0.0.1</key>,1.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+152,<string>1.0.0.1</string>,1.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+153,<string>1.0.0.1</string>,1.0.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+154,<key>1.1.1.1</key>,1.1.1.1,True,True,positive,Valid IPv4 and source-labelled positive
+155,<string>1.1.1.1</string>,1.1.1.1,True,True,positive,Valid IPv4 and source-labelled positive
+156,<string>1.1.1.1</string>,1.1.1.1,True,True,positive,Valid IPv4 and source-labelled positive
+157,<string>http://abuseipdb.com/check/208.180.231.139</string>,208.180.231.139,True,True,positive,Valid IPv4 and source-labelled positive
+158,<string>http://www.abuseipdb.com/whois/69.50.232.54</string>,69.50.232.54,True,True,positive,Valid IPv4 and source-labelled positive
+159,<string>http://advantage1.checkm8.com/AdminServer/swf/admin-release.swf?version=4.3.0.49</string>,4.3.0.49,True,True,positive,Valid IPv4 and source-labelled positive
+160,<string>http://d3bn78kc7qbjb6.cloudfront.net/rc-0.0.0.392/views/logs/logs.html</string>,0.0.0.392,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+161,<string>http://fcs.dell.com/fcs/fcs/UIFramework/3.2.108.2/res/Image?path=sharedcontrols%2Fcontainers%2Fvalidation_messaging_left.png</string>,3.2.108.2,True,True,positive,Valid IPv4 and source-labelled positive
+162,<string>http://ui1.img.digitalrivercontent.net/drui/1.7.0.0.7.1/css/dr-stylesheet-ff-compressed.css</string>,1.7.0.0,True,True,positive,Valid IPv4 and source-labelled positive
+163,<string>http://fast.fonts.com/FontsCom/Live/static/2.15.134.0/img/apple-touch-icon-57x57.png</string>,2.15.134.0,True,True,positive,Valid IPv4 and source-labelled positive
+164,<string>http://tva1.sinaimg.cn/crop.0.0.798.798.180/6462d00fgw1egno4hgy6wj20m80m8mxn.jpg</string>,0.0.798.798,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+165,<string>http://netix.dl.sourceforge.net/project/kreogist-mu/Releases/0.9.9.3/Windows/mu_0.9.9.3_win64_intel_d9b5f2d.zip</string>,0.9.9.3,True,True,negative,Valid IPv4 but source-labelled negative (ambiguous)
+166,<string>http://netix.dl.sourceforge.net/project/kreogist-mu/Releases/0.9.9.3/Windows/mu_0.9.9.3_win64_intel_d9b5f2d.zip</string>,0.9.9.3,True,True,negative,Valid IPv4 but source-labelled negative (ambiguous)
+167,<string>http://sm.wdjcdn.com/release/files/jupiter/5.6.1.8925/wandoujia-wandoujia_web.apk</string>,5.6.1.892,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+168,<string>http://tvassl.weibo.cn/crop.0.21.685.685.1024/6b84272bgw1euxxzxrndpj20k00k0adc.jpg</string>,0.21.685.685,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+169,<string>http://novel-cdn.kuangxiangit.com/custom/download/1.4.4.02/Novel-release_14402_jiagu_sign-1109-2-PCdownload.apk</string>,1.4.4.02,True,False,positive,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+170,<string>http://en-us-support.belkin.com/euf/rightnow/js/10.5.0.1.6.137/min/RightNow.js</string>,10.5.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+171,<string>3608.80.24.1.8</string>,608.80.24.1,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+172,<string>2.20.31.4</string>,2.20.31.4,True,True,positive,Valid IPv4 and source-labelled positive
+173,<string>https://scontent-iad3-1.cdninstagram.com/v/t51.2885-15/e15/c180.0.720.720a/s240x240/93425170_1848465348622192_2718028079642416718_n.jpg?cachebreaker=9823&amp,_nc_ht=scontent-iad3-1.cdninstagram.com&amp;_nc_cat=1&amp;_nc_ohc=MteGbc14-xIAX9Oom5c&amp;oh=bce805572a79dd6ed9fbedbbf1b198ee&amp;oe=5EC259EB&amp;ig_cache_key=MjI4ODMyOTY2NzQ3OTg3Nzk0Ng%3D%3D.2</string>;180.0.720.720,True,False,positive,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+174,<string>8.5.51.877.g6cea6b5</string>,8.5.51.877,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+175,<string>8.5.51.877</string>,8.5.51.877,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+176,<string>1.000.000.000+</string>,1.000.000.000,True,False,positive,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+177,<string>2.20.31.4</string>,2.20.31.4,True,True,positive,Valid IPv4 and source-labelled positive
+178,<string>257.0.1.38.116</string>,257.0.1.38,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+179,<string>/private/var/MobileAsset/AssetsV2/com_apple_MobileAsset_EmbeddedSpeech/479991bc60161e4545ff833d6117f264954cb6b3.asset/AssetData/eng-USA-OfflineIOS-7.0.0.4-20200319</string>,7.0.0.4,True,True,positive,Valid IPv4 and source-labelled positive
+180,<string>3608.80.24.1.8</string>,608.80.24.1,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+181,<string>http://en-us-support.belkin.com/euf/rightnow/js/10.5.0.1.6.137/min/RightNow.js</string>,10.5.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+182,<string>10.78.6.0</string>,10.78.6.0,True,True,positive,Valid IPv4 and source-labelled positive
+183,<string>3608.80.24.1.8</string>,608.80.24.1,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+184,<string>2.20.31.4</string>,2.20.31.4,True,True,positive,Valid IPv4 and source-labelled positive
+185,<string>13.3.1.17D50</string>,13.3.1.17,True,True,positive,Valid IPv4 and source-labelled positive
+186,<string>13.3.1.17D50</string>,13.3.1.17,True,True,positive,Valid IPv4 and source-labelled positive
+187,<string>104.36.225.166</string>,104.36.225.166,True,True,positive,Valid IPv4 and source-labelled positive
+188,<string>104.36.225.154</string>,104.36.225.154,True,True,positive,Valid IPv4 and source-labelled positive
+189,<string>104.36.225.179</string>,104.36.225.179,True,True,positive,Valid IPv4 and source-labelled positive
+190,<string>104.36.225.142</string>,104.36.225.142,True,True,positive,Valid IPv4 and source-labelled positive
+191,<string>http://en-us-support.belkin.com/euf/rightnow/js/10.5.0.1.6.137/min/RightNow.js</string>,10.5.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+192,<string>20.10.0.8</string>,20.10.0.8,True,True,positive,Valid IPv4 and source-labelled positive
+193,<string>135.0.0.22.118</string>,135.0.0.22,True,True,positive,Valid IPv4 and source-labelled positive
+194,<string>34.227.164.166</string>,34.227.164.166,True,True,positive,Valid IPv4 and source-labelled positive
+195,<string>http://en-us-support.belkin.com/euf/rightnow/js/10.5.0.1.6.137/min/RightNow.js</string>,10.5.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+196,<string>eng-USA-OfflineIOS-7.0.0.4-20200319</string>,7.0.0.4,True,True,positive,Valid IPv4 and source-labelled positive
+197,<string>7.4.1.2</string>,7.4.1.2,True,True,positive,Valid IPv4 and source-labelled positive
+198,<string>64.98.122.70</string>,64.98.122.70,True,True,positive,Valid IPv4 and source-labelled positive
+199,<string>20.10.0.8</string>,20.10.0.8,True,True,positive,Valid IPv4 and source-labelled positive
+200,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+201,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+202,<string>257.0.1.38.116</string>,257.0.1.38,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+203,<string>257.0.1.38.116</string>,257.0.1.38,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+204,<string>tincan_register_device_256.0.1.26.113</string>,256.0.1.26,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+205,<string>tincan_register_device_257.0.1.38.116</string>,257.0.1.38,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+206,<string>257.0.1.38.116</string>,257.0.1.38,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+207,<string>257.0.1.38.116</string>,257.0.1.38,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+208,<string>135.0.0.22.118 (206072690)</string>,135.0.0.22,True,True,positive,Valid IPv4 and source-labelled positive
+209,<string>2.20.31.4</string>,2.20.31.4,True,True,positive,Valid IPv4 and source-labelled positive
+210,<string>3.6.1.4</string>,3.6.1.4,True,True,positive,Valid IPv4 and source-labelled positive
+211,<string>http://en-us-support.belkin.com/euf/rightnow/js/10.5.0.1.6.137/min/RightNow.js</string>,10.5.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+212,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+213,<string>http://en-us-support.belkin.com/euf/rightnow/js/10.5.0.1.6.137/min/RightNow.js</string>,10.5.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+214,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+215,<string>15.21.2.14594</string>,15.21.2.145,True,True,positive,Valid IPv4 and source-labelled positive
+216,<string>http://en-us-support.belkin.com/euf/rightnow/js/10.5.0.1.6.137/min/RightNow.js</string>,10.5.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+217,<string>3608.80.24.1.8</string>,608.80.24.1,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+218,<string>5.12.20.4.10.18.5.5.2</string>,5.12.20.4,True,True,positive,Valid IPv4 and source-labelled positive
+219,<string>5.12.20.4.10.18.5.5.2</string>,10.18.5.5,True,True,positive,Valid IPv4 and source-labelled positive
+220,<string>3608.80.24.1.8</string>,608.80.24.1,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+221,<string>12.6.0.1</string>,12.6.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+222,<string>http://en-us-support.belkin.com/euf/rightnow/js/10.5.0.1.6.137/min/RightNow.js</string>,10.5.0.1,True,True,positive,Valid IPv4 and source-labelled positive
+223,<string>2.20.31.4</string>,2.20.31.4,True,True,positive,Valid IPv4 and source-labelled positive
+224,<string>3608.80.24.1.8</string>,608.80.24.1,True,False,negative,"Regex matched but IPv4 validation failed (leading zeros, octet > 255, or extra groups)"
+225,<string>255.255.255.255</string>,255.255.255.255,True,True,positive,Valid IPv4 and source-labelled positive
+226,<string>0.0.0.0</string>,0.0.0.0,True,True,negative,Valid IPv4 but source-labelled negative (ambiguous)
+227,<string>255.255.255.255</string>,255.255.255.255,True,True,positive,Valid IPv4 and source-labelled positive
+228,<string>0.0.0.0</string>,0.0.0.0,True,True,negative,Valid IPv4 but source-labelled negative (ambiguous)

@@ -1,0 +1,8 @@
+record_type,candidate,prompt,actual,ml_pred,base_pred,note
+TP,2.20.31.4,	<string>2.20.31.4</string>;2.20.31.4 ->,positive,positive,positive,Clear valid IPv4 in positive context. Both ML and rule agree. Correctly triaged as positive.
+TP,13.3.1.17,		<string>13.3.1.17D50</string>;13.3.1.17 ->,positive,positive,positive,Clear valid IPv4 in positive context. Both ML and rule agree. Correctly triaged as positive.
+TN,608.80.24.1,	<string>3608.80.24.1.8</string>;608.80.24.1 ->,negative,negative,negative,Invalid IPv4 syntax. Both ML and rule correctly rejected.
+TN,257.0.1.38,	<string>257.0.1.38.116</string>;257.0.1.38 ->,negative,negative,negative,Invalid IPv4 syntax. Both ML and rule correctly rejected.
+TN (ML beat rule),0.0.0.0,						<string>0.0.0.0</string>;0.0.0.0 ->,negative,negative,positive,0.0.0.0 passes IPv4 syntax (rule => positive) but is the unspecified address. Source label negative. ML correctly used context.
+TN (ML beat rule),0.0.0.0,						<string>0.0.0.0</string>;0.0.0.0 ->,negative,negative,positive,0.0.0.0 passes IPv4 syntax (rule => positive) but is the unspecified address. Source label negative. ML correctly used context.
+FP,256.0.1.26,			<string>tincan_register_device_256.0.1.26.113</string>;256.0.1.26 ->,negative,positive,negative,INVALID IPv4 (octet 256 > 255). Rule correctly rejected. ML incorrectly flagged positive because it sees a 4-group digit pattern in <string> tag context.

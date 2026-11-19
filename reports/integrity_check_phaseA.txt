@@ -1,0 +1,5 @@
+originals/dataset_small.csv: OK
+originals/dataset_train.jsonl: OK
+originals/dataset_test.jsonl: OK
+originals/result.csv: OK
+originals/fine_tuning_steps.txt: OK

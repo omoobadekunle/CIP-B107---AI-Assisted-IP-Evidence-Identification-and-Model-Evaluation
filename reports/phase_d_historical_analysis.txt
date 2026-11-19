@@ -1,0 +1,19 @@
+=== PHASE D: HISTORICAL FINE-TUNING INVESTIGATION ===
+
+1. FILE ANALYZED:
+   - working/working_fine_tuning_steps.txt
+
+2. OBSERVATIONS:
+   - The log contains 49 training steps.
+   - Training loss steadily decreases from 0.34 to ~0.01, indicating the model is learning.
+   - Training sequence and token accuracy reach 1.0 (100%) by step 5.
+   - There are distinct loss spikes at steps 13, 23, 35, and 39 where accuracy drops to 0.0.
+
+3. FORENSIC INTERPRETATION (WHAT THIS DOES NOT PROVE):
+   - This log shows TRAINING accuracy, not TEST/VALIDATION accuracy. 
+   - A 1.0 training accuracy indicates the model memorized the training data (overfitting) and provides NO EVIDENCE of how it will perform on unseen data.
+   - The loss spikes suggest specific anomalous examples in the training set momentarily confused the model.
+   - No conclusion about real-world model reliability can be drawn from this file alone.
+
+4. RECOMMENDATION:
+   - Rely on the offline Random Forest classifier (Phase C) for actual performance metrics, as it was evaluated on a stratified hold-out test set.
