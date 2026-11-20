@@ -89,8 +89,7 @@
 14. [Executive Briefing (Two Pages Max)](#14-executive-briefing-two-pages-max)
 15. [Key Learning Outcomes](#15-key-learning-outcomes)
 16. [List of Figures](#16-list-of-figures)
-17. [Repository Structure](#17-repository-structure)
-18. [Author](#18-author)
+17. [Author](#18-author)
 
 ---
 
@@ -181,12 +180,12 @@ I created a folder structure with separate areas for originals, working copies, 
 The evidence manifest recorded the filename, SHA-256 hash, file size in bytes, examination time in WAT, examiner name and transfer source for each of the five evidence files.
 
 <p align="center">
-  <img src="screenshots/Figure_01_Case_Directory.png" alt="Figure 01: Case Directory" width="760"><br>
+  <img width="1609" height="969" alt="Figure_01_Case_Directory" src="https://github.com/user-attachments/assets/d01f0420-18c1-4f6e-a8cf-7d991646ea74" />
   <em>Figure 01: Case Directory</em>
 </p>
 
 <p align="center">
-  <img src="screenshots/Figure_02_Evidence_Integrity.png" alt="Figure 02: Evidence Integrity" width="760"><br>
+  <img width="1609" height="969" alt="Figure_02_Evidence_Integrity" src="https://github.com/user-attachments/assets/6835c3ef-9517-432d-89b6-35e8b6fb20f5" />
   <em>Figure 02: Evidence Integrity</em>
 </p>
 
@@ -230,7 +229,7 @@ The prompt format is `context;candidate ->` and the completion is `positive` or 
 I compared the first five CSV rows against their JSONL representation. The `ip` column in the CSV matches the candidate in the prompt, the `class` column maps to the source annotation, and the `text` column contains the XML context. The JSONL uses the same content, but bundled into a single prompt string and labelled binary (positive or negative) instead of multi-class (A, B, C, E, N).
 
 <p align="center">
-  <img src="screenshots/Figure_03_Dataset_Profile.png" alt="Figure 03: Dataset Profile" width="760"><br>
+ <img width="1609" height="969" alt="Figure_03_Dataset_Profile" src="https://github.com/user-attachments/assets/0aa0a1e5-8045-42c9-91b5-4e82cb4a8c43" />
   <em>Figure 03: Dataset Profile</em>
 </p>
 
@@ -285,7 +284,7 @@ I found three kinds of disagreement:
 I exported `outputs/candidate_review.csv` with the exact columns the brief requested: `source_row`, `context`, `candidate`, `regex_match`, `ipv4_valid`, `source_label`, `analyst_note`. All 229 rows have analyst notes explaining the classification of each record.
 
 <p align="center">
-  <img src="screenshots/Figure_04_IP_Extraction_and_Validation.png" alt="Figure 04: IP Extraction and Validation" width="760"><br>
+  <img width="1609" height="969" alt="Figure_04_IP_Extraction_Validation" src="https://github.com/user-attachments/assets/a8472f0c-335d-460b-a662-0c487dc914ff" />" 
   <em>Figure 04: IP Extraction and Validation</em>
 </p>
 
@@ -366,13 +365,13 @@ Removing the leaked prompts drops the accuracy by about 4 percentage points. Thi
 The predictions, classification reports, and confusion matrix were saved to `outputs/predictions.csv`, `outputs/phase_c_classification_report.txt`, and `outputs/phase_c_confusion_matrix_v2.png`.
 
 <p align="center">
-  <img src="screenshots/Figure_05_Classification_Report.png" alt="Figure 05: Classification Report" width="760"><br>
+  <img width="1609" height="969" alt="Figure_05_Classification_Report" src="https://github.com/user-attachments/assets/51929c26-052c-4065-a09b-42fd20c5ccee" />
   <em>Figure 05: Classification Report</em>
 </p>
 
 <p align="center">
-  <img src="screenshots/Figure_06_Confusion_Matrix.png" alt="Figure 06: Confusion Matrix" width="520"><br>
-  <em>Figure 06: Confusion Matrix</em>
+  <img width="600" height="500" alt="Figure_06_Confusion_Matrix" src="https://github.com/user-attachments/assets/0ea61502-1b7f-4fa0-8565-ac8b0ec6d805" />  
+   <em>Figure 06: Confusion Matrix</em>
 </p>
 
 <p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
@@ -446,7 +445,7 @@ The historical model's final accuracy of 97.83% is the same as my fresh Logistic
 The analysis was saved to `reports/phase_d_historical_analysis.txt`, and the loss plot was saved to `outputs/phase_d_loss_plot.png`.
 
 <p align="center">
-  <img src="screenshots/Figure_07_Historical_Fine_Tuning_Loss_Plot.png" alt="Figure 07: Historical Fine-Tuning Loss Plot" width="760"><br>
+  <img width="1200" height="800" alt="Figure_07_Fine_Tuning_Loss_Plot" src="https://github.com/user-attachments/assets/3621d605-f65a-41a0-97b4-d6b1f3f1fc8a" />
   <em>Figure 07: Historical Fine-Tuning Loss Plot</em>
 </p>
 
@@ -512,9 +511,10 @@ The ML model produced 0 false negatives on this test set. The rule baseline prod
 > Where the ML model and the rule baseline disagree, the record should be escalated to an analyst rather than resolved automatically. This covers records 5 and 6 (where ML was right and the rule was wrong) and record 7 (where the rule was right and ML was wrong). Automated resolution would have produced the wrong answer on all three.
 
 <p align="center">
-  <img src="screenshots/Figure_08_Misclassification_Analysis.png" alt="Figure 08: Misclassification Analysis" width="760"><br>
+<img width="1609" height="969" alt="Figure_08_Misclassification_Analysis" src="https://github.com/user-attachments/assets/cdc38eec-2a06-4433-bb66-bee9358b79f7" /> 
   <em>Figure 08: Misclassification Analysis</em>
 </p>
+ 
 
 <p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
@@ -686,37 +686,10 @@ All screenshots are stored in the `screenshots/` folder, located in the root of 
 
 ---
 
-## 17. Repository Structure
 
-```text
-CIP-B107-LAB01/
-├── README.md
-├── evidence_manifest.csv
-├── outputs/
-│   ├── candidate_review.csv
-│   ├── predictions.csv
-│   ├── analyst_review.csv
-│   ├── phase_c_classification_report.txt
-│   ├── phase_c_confusion_matrix_v2.png
-│   └── phase_d_loss_plot.png
-├── reports/
-│   └── phase_d_historical_analysis.txt
-└── screenshots/
-    ├── Figure_01_Case_Directory.png
-    ├── Figure_02_Evidence_Integrity.png
-    ├── Figure_03_Dataset_Profile.png
-    ├── Figure_04_IP_Extraction_and_Validation.png
-    ├── Figure_05_Classification_Report.png
-    ├── Figure_06_Confusion_Matrix.png
-    ├── Figure_07_Historical_Fine_Tuning_Loss_Plot.png
-    └── Figure_08_Misclassification_Analysis.png
-```
+## 17. Author
 
----
-
-## 18. Author
-
-**Adekunle Ogunyemi**
+**Adekunle Ogunyemi**  
 Digital Forensics Examiner, ICDFA CIP-B107
 
 <div align="center">
