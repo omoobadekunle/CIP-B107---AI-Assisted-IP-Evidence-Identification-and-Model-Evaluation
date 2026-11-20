@@ -666,16 +666,21 @@ The JSONL split contains leakage. The historical `result.csv` is evaluated on th
 
 ## 16. List of Figures
 
-| Figure | Title | File |
-|---|---|---|
-| 01 | Case Directory | `screenshots/Figure_01_Case_Directory.png` |
-| 02 | Evidence Integrity | `screenshots/Figure_02_Evidence_Integrity.png` |
-| 03 | Dataset Profile | `screenshots/Figure_03_Dataset_Profile.png` |
-| 04 | IP Extraction and Validation | `screenshots/Figure_04_IP_Extraction_and_Validation.png` |
-| 05 | Classification Report | `screenshots/Figure_05_Classification_Report.png` |
-| 06 | Confusion Matrix | `screenshots/Figure_06_Confusion_Matrix.png` |
-| 07 | Historical Fine-Tuning Loss Plot | `screenshots/Figure_07_Historical_Fine_Tuning_Loss_Plot.png` |
-| 08 | Misclassification Analysis | `screenshots/Figure_08_Misclassification_Analysis.png` |
+All screenshots are stored in the `screenshots/` folder, located in the root of the repository next to `README.md`. Each figure appears in the section shown below.
+
+| Figure | Title | Appears in | File |
+|:---:|---|---|---|
+| 01 | Case Directory | [5. Evidence Handling and Methodology](#5-evidence-handling-and-methodology) | [`screenshots/Figure_01_Case_Directory.png`](screenshots/Figure_01_Case_Directory.png) |
+| 02 | Evidence Integrity | [5. Evidence Handling and Methodology](#5-evidence-handling-and-methodology) | [`screenshots/Figure_02_Evidence_Integrity.png`](screenshots/Figure_02_Evidence_Integrity.png) |
+| 03 | Dataset Profile | [6.3 CSV vs JSONL Comparison](#63-csv-vs-jsonl-comparison) | [`screenshots/Figure_03_Dataset_Profile.png`](screenshots/Figure_03_Dataset_Profile.png) |
+| 04 | IP Extraction and Validation | [7.5 Candidate Review Export](#75-candidate-review-export) | [`screenshots/Figure_04_IP_Extraction_and_Validation.png`](screenshots/Figure_04_IP_Extraction_and_Validation.png) |
+| 05 | Classification Report | [8.6 Leakage-Aware Supplementary Evaluation](#86-leakage-aware-supplementary-evaluation) | [`screenshots/Figure_05_Classification_Report.png`](screenshots/Figure_05_Classification_Report.png) |
+| 06 | Confusion Matrix | [8.6 Leakage-Aware Supplementary Evaluation](#86-leakage-aware-supplementary-evaluation) | [`screenshots/Figure_06_Confusion_Matrix.png`](screenshots/Figure_06_Confusion_Matrix.png) |
+| 07 | Historical Fine-Tuning Loss Plot | [9.7 Limitations of the Historical Logs](#97-limitations-of-the-historical-logs) | [`screenshots/Figure_07_Historical_Fine_Tuning_Loss_Plot.png`](screenshots/Figure_07_Historical_Fine_Tuning_Loss_Plot.png) |
+| 08 | Misclassification Analysis | [10.5 Analyst Escalation](#105-analyst-escalation) | [`screenshots/Figure_08_Misclassification_Analysis.png`](screenshots/Figure_08_Misclassification_Analysis.png) |
+
+> [!NOTE]
+> If a screenshot is renamed or the `screenshots/` folder is moved, update the matching image path in this README, otherwise the figure will show as a broken image on GitHub.
 
 <p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
