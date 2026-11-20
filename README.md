@@ -1,6 +1,21 @@
-# CIP-B107: AI-Assisted IP Evidence Identification and Model Evaluation
+<div align="center">
+
+# CIP-B107
+
+## AI-Assisted IP Evidence Identification and Model Evaluation
 
 *A forensic examination of a supplied IP dataset using Python, Pandas and Scikit-Learn, carried out as part of the ICDFA CIP-B107 module.*
+
+![Module](https://img.shields.io/badge/Module-ICDFA%20CIP--B107-1f4e79?style=for-the-badge)
+![Case](https://img.shields.io/badge/Case-CIP--B107--LAB01-555555?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Kali%20Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Logistic%20Regression-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Completed-2e7d32?style=for-the-badge)
+
+</div>
+
+<br>
 
 | Field | Detail |
 |---|---|
@@ -11,6 +26,22 @@
 | **Environment** | Kali Linux |
 | **Evidence source** | Supplied ICDFA practical package |
 | **Time standard** | WAT for examination times, UTC for model timestamps where stated |
+
+### Results at a Glance
+
+| Dataset records | Train / test split | Valid IPv4 extracted | Prompt overlaps (leakage) |
+|:---:|:---:|:---:|:---:|
+| **229** | **183 / 46** | **198** of 229 | **11** of 46 test prompts |
+
+| Model | Accuracy | Test records (n) |
+|---|:---:|:---:|
+| Logistic Regression (full holdout) | **97.83%** | 46 |
+| Logistic Regression (clean subset, no leaked prompts) | **93.75%** | 16 |
+| Rule-based baseline | **95.65%** | 46 |
+| Majority-class baseline | **73.91%** | 46 |
+
+> [!NOTE]
+> Conclusions are limited to the records examined and the test split used. The headline accuracy is inflated by train/test leakage; see [Section 8.2](#82-leakage-check) and [Section 8.6](#86-leakage-aware-supplementary-evaluation).
 
 ---
 
@@ -58,6 +89,8 @@
 14. [Executive Briefing (Two Pages Max)](#14-executive-briefing-two-pages-max)
 15. [Key Learning Outcomes](#15-key-learning-outcomes)
 16. [List of Figures](#16-list-of-figures)
+17. [Repository Structure](#17-repository-structure)
+18. [Author](#18-author)
 
 ---
 
@@ -66,6 +99,8 @@
 This report documents my AI-assisted IP evidence identification practical for the ICDFA CIP-B107 module. The exercise required me to preserve a supplied dataset, extract IP addresses from raw text, train an offline machine learning classifier, investigate historical fine-tuning logs, evaluate the model, and produce a forensic report.
 
 I approached the work by preserving the source evidence, creating separate working copies, calculating SHA-256 hashes, extracting IP candidates with a regular expression, validating them with Python's `ipaddress` module, and training a Logistic Regression classifier with Scikit-Learn on the supplied JSONL files. I paid particular attention to what the historical training logs actually prove and to the difference between training accuracy and real-world model reliability.
+
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -90,7 +125,10 @@ During the examination, I profiled the dataset and the JSONL files, extracted 22
 - The historical `result.csv` shows a final accuracy of 97.83%, precision of 97.14%, recall of 1.0, F1 of 0.9855, AUROC of 0.9975 and AUPRC of 0.9991.
 - The historical `result.csv` and my fresh Logistic Regression model show the same accuracy because both are evaluated on the same test set, which contains 11 leaked training examples.
 
-My conclusions are limited to the records I examined and the test split I used. Further work with more balanced data would be needed before making stronger claims about model reliability.
+> [!NOTE]
+> My conclusions are limited to the records I examined and the test split I used. Further work with more balanced data would be needed before making stronger claims about model reliability.
+
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -104,6 +142,8 @@ My conclusions are limited to the records I examined and the test split I used. 
 - Evaluate the model using a confusion matrix, per-class metrics, and an 8-record analyst review.
 - Produce an executive briefing and final submission package.
 - Identify limitations and recommend improvements for future work.
+
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -122,6 +162,8 @@ My conclusions are limited to the records I examined and the test split I used. 
 
 All work was done offline. No external API or paid service was used.
 
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
+
 ---
 
 ## 5. Evidence Handling and Methodology
@@ -138,13 +180,17 @@ I created a folder structure with separate areas for originals, working copies, 
 
 The evidence manifest recorded the filename, SHA-256 hash, file size in bytes, examination time in WAT, examiner name and transfer source for each of the five evidence files.
 
-![Figure 01: Case Directory](screenshots/Figure_01_Case_Directory.png)
+<p align="center">
+  <img src="screenshots/Figure_01_Case_Directory.png" alt="Figure 01: Case Directory" width="760"><br>
+  <em>Figure 01: Case Directory</em>
+</p>
 
-*Figure 01: Case Directory*
+<p align="center">
+  <img src="screenshots/Figure_02_Evidence_Integrity.png" alt="Figure 02: Evidence Integrity" width="760"><br>
+  <em>Figure 02: Evidence Integrity</em>
+</p>
 
-![Figure 02: Evidence Integrity](screenshots/Figure_02_Evidence_Integrity.png)
-
-*Figure 02: Evidence Integrity*
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -183,9 +229,12 @@ The prompt format is `context;candidate ->` and the completion is `positive` or 
 
 I compared the first five CSV rows against their JSONL representation. The `ip` column in the CSV matches the candidate in the prompt, the `class` column maps to the source annotation, and the `text` column contains the XML context. The JSONL uses the same content, but bundled into a single prompt string and labelled binary (positive or negative) instead of multi-class (A, B, C, E, N).
 
-![Figure 03: Dataset Profile](screenshots/Figure_03_Dataset_Profile.png)
+<p align="center">
+  <img src="screenshots/Figure_03_Dataset_Profile.png" alt="Figure 03: Dataset Profile" width="760"><br>
+  <em>Figure 03: Dataset Profile</em>
+</p>
 
-*Figure 03: Dataset Profile*
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -235,9 +284,12 @@ I found three kinds of disagreement:
 
 I exported `outputs/candidate_review.csv` with the exact columns the brief requested: `source_row`, `context`, `candidate`, `regex_match`, `ipv4_valid`, `source_label`, `analyst_note`. All 229 rows have analyst notes explaining the classification of each record.
 
-![Figure 04: IP Extraction and Validation](screenshots/Figure_04_IP_Extraction_and_Validation.png)
+<p align="center">
+  <img src="screenshots/Figure_04_IP_Extraction_and_Validation.png" alt="Figure 04: IP Extraction and Validation" width="760"><br>
+  <em>Figure 04: IP Extraction and Validation</em>
+</p>
 
-*Figure 04: IP Extraction and Validation*
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -264,7 +316,8 @@ Before training, I checked whether the train and test splits share any exact pro
 | Unique test candidates | 23 |
 | Candidate-level overlaps | 12 |
 
-This means about 24% of test prompts (11 out of 46) are identical to a training prompt, and about 26% of test candidates share an IP string with a training record. Any model will trivially get these correct, which inflates the measured accuracy. I report this honestly below.
+> [!WARNING]
+> This means about 24% of test prompts (11 out of 46) are identical to a training prompt, and about 26% of test candidates share an IP string with a training record. Any model will trivially get these correct, which inflates the measured accuracy. I report this honestly below.
 
 ### 8.3 ML Classifier Results
 
@@ -312,13 +365,17 @@ Removing the leaked prompts drops the accuracy by about 4 percentage points. Thi
 
 The predictions, classification reports, and confusion matrix were saved to `outputs/predictions.csv`, `outputs/phase_c_classification_report.txt`, and `outputs/phase_c_confusion_matrix_v2.png`.
 
-![Figure 05: Classification Report](screenshots/Figure_05_Classification_Report.png)
+<p align="center">
+  <img src="screenshots/Figure_05_Classification_Report.png" alt="Figure 05: Classification Report" width="760"><br>
+  <em>Figure 05: Classification Report</em>
+</p>
 
-*Figure 05: Classification Report*
+<p align="center">
+  <img src="screenshots/Figure_06_Confusion_Matrix.png" alt="Figure 06: Confusion Matrix" width="520"><br>
+  <em>Figure 06: Confusion Matrix</em>
+</p>
 
-![Figure 06: Confusion Matrix](screenshots/Figure_06_Confusion_Matrix.png)
-
-*Figure 06: Confusion Matrix*
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -364,11 +421,13 @@ The `result.csv` records classification metrics only 4 times. The final row (ste
 
 The historical model's final accuracy of 97.83% is the same as my fresh Logistic Regression model's accuracy. This is not a coincidence. Both runs use the same `dataset_test.jsonl` holdout, and that holdout contains 11 prompts that also appear in the training set. The historical accuracy is inflated by the same leakage that affects my fresh model.
 
-This is a historical result, not a student-run model. The `result.csv` file was supplied by the module and must be reported as historical data, not as a model I trained myself.
+> [!IMPORTANT]
+> This is a historical result, not a student-run model. The `result.csv` file was supplied by the module and must be reported as historical data, not as a model I trained myself.
 
 ### 9.6 Legacy Workflow Note
 
-The original PowerPoint describes a workflow of upload – fine-tuning job – status poll → prediction. This workflow used OpenAI's legacy "ada" model and the old fine-tuning endpoints. Those endpoints are obsolete. The supplied scripts also contain embedded credentials, which the brief warns against executing and copying. I did not run any of those scripts, and I did not copy any embedded token into this report.
+> [!CAUTION]
+> The original PowerPoint describes a workflow of upload – fine-tuning job – status poll → prediction. This workflow used OpenAI's legacy "ada" model and the old fine-tuning endpoints. Those endpoints are obsolete. The supplied scripts also contain embedded credentials, which the brief warns against executing and copying. I did not run any of those scripts, and I did not copy any embedded token into this report.
 
 ### 9.7 Limitations of the Historical Logs
 
@@ -386,9 +445,12 @@ The original PowerPoint describes a workflow of upload – fine-tuning job – s
 
 The analysis was saved to `reports/phase_d_historical_analysis.txt`, and the loss plot was saved to `outputs/phase_d_loss_plot.png`.
 
-![Figure 07: Historical Fine-Tuning Loss Plot](screenshots/Figure_07_Historical_Fine_Tuning_Loss_Plot.png)
+<p align="center">
+  <img src="screenshots/Figure_07_Historical_Fine_Tuning_Loss_Plot.png" alt="Figure 07: Historical Fine-Tuning Loss Plot" width="760"><br>
+  <em>Figure 07: Historical Fine-Tuning Loss Plot</em>
+</p>
 
-*Figure 07: Historical Fine-Tuning Loss Plot*
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -446,11 +508,15 @@ The ML model produced 0 false negatives on this test set. The rule baseline prod
 
 ### 10.5 Analyst Escalation
 
-Where the ML model and the rule baseline disagree, the record should be escalated to an analyst rather than resolved automatically. This covers records 5 and 6 (where ML was right and the rule was wrong) and record 7 (where the rule was right and ML was wrong). Automated resolution would have produced the wrong answer on all three.
+> [!TIP]
+> Where the ML model and the rule baseline disagree, the record should be escalated to an analyst rather than resolved automatically. This covers records 5 and 6 (where ML was right and the rule was wrong) and record 7 (where the rule was right and ML was wrong). Automated resolution would have produced the wrong answer on all three.
 
-![Figure 08: Misclassification Analysis](screenshots/Figure_08_Misclassification_Analysis.png)
+<p align="center">
+  <img src="screenshots/Figure_08_Misclassification_Analysis.png" alt="Figure 08: Misclassification Analysis" width="760"><br>
+  <em>Figure 08: Misclassification Analysis</em>
+</p>
 
-*Figure 08: Misclassification Analysis*
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -479,6 +545,8 @@ Where the ML model and the rule baseline disagree, the record should be escalate
 - The `0.0.0.0` cases where the ML beat the rule could reflect a lucky pattern match in the training data rather than a general learned context rule. With only two test examples, I cannot distinguish between these.
 - The `256.0.1.26` failure could reflect a fundamental limitation of the ML approach (no notion of IP validity) rather than a fixable training gap.
 
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
+
 ---
 
 ## 12. Scope and Limitations
@@ -493,6 +561,8 @@ The conclusions are limited to what the records show:
 - The historical fine-tuning logs do not identify which dataset was used for fine-tuning or how the training and validation sets were constructed.
 - The invalid IP `256.0.1.26` appears in the test split because the JSONL split is fixed. In a production pipeline, Phase B validation would run first, and this record would be filtered or flagged before reaching the model.
 - The model treats IP addresses as text patterns and does not validate them. Any claim about the model identifying valid network addresses must be checked against the Phase B output.
+
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -534,7 +604,8 @@ The JSONL split contains leakage. The historical `result.csv` is evaluated on th
 
 ### Recommendation
 
-Deploy the model as analyst assistance only, not as automated decision-making. Route disagreements between ML and rule to an analyst. Do not classify any recovered address as malicious without corroborating evidence.
+> [!IMPORTANT]
+> Deploy the model as analyst assistance only, not as automated decision-making. Route disagreements between ML and rule to an analyst. Do not classify any recovered address as malicious without corroborating evidence.
 
 ### Next Investigative Actions
 
@@ -542,6 +613,8 @@ Deploy the model as analyst assistance only, not as automated decision-making. R
 - Expand the negative class with more context-aware examples (URLs, version strings, wildcard addresses).
 - Add a hard validation step (Phase B `ipaddress` check) in front of the model so it never sees an invalid address.
 - Review the historical fine-tuning scripts for credential removal and API version updates before any use.
+
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -568,7 +641,10 @@ Deploy the model as analyst assistance only, not as automated decision-making. R
 4. The rule baseline has a different blind spot: it cannot tell whether an IP is forensically meaningful. It classified `0.0.0.0` as positive because it passes `ipaddress.IPv4Address`.
 5. The historical fine-tuning run shows 100% training accuracy and a perfect validation accuracy after a few steps. This is memorisation, not evidence of real-world reliability.
 
-**Recommendation.** Deploy as analyst assistance only. Escalate ML/rule disagreements to an analyst. Never classify an IP as malicious without corroborating evidence.
+> [!IMPORTANT]
+> **Recommendation.** Deploy as analyst assistance only. Escalate ML/rule disagreements to an analyst. Never classify an IP as malicious without corroborating evidence.
+
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
 
 ---
 
@@ -584,6 +660,8 @@ Deploy the model as analyst assistance only, not as automated decision-making. R
 - Detecting and disclosing train/test leakage and its effect on measured accuracy.
 - Tracing misclassifications back to specific records and explaining them in forensic terms.
 
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
+
 ---
 
 ## 16. List of Figures
@@ -598,3 +676,46 @@ Deploy the model as analyst assistance only, not as automated decision-making. R
 | 06 | Confusion Matrix | `screenshots/Figure_06_Confusion_Matrix.png` |
 | 07 | Historical Fine-Tuning Loss Plot | `screenshots/Figure_07_Historical_Fine_Tuning_Loss_Plot.png` |
 | 08 | Misclassification Analysis | `screenshots/Figure_08_Misclassification_Analysis.png` |
+
+<p align="right"><a href="#table-of-contents">&#8593; Back to top</a></p>
+
+---
+
+## 17. Repository Structure
+
+```text
+CIP-B107-LAB01/
+├── README.md
+├── evidence_manifest.csv
+├── outputs/
+│   ├── candidate_review.csv
+│   ├── predictions.csv
+│   ├── analyst_review.csv
+│   ├── phase_c_classification_report.txt
+│   ├── phase_c_confusion_matrix_v2.png
+│   └── phase_d_loss_plot.png
+├── reports/
+│   └── phase_d_historical_analysis.txt
+└── screenshots/
+    ├── Figure_01_Case_Directory.png
+    ├── Figure_02_Evidence_Integrity.png
+    ├── Figure_03_Dataset_Profile.png
+    ├── Figure_04_IP_Extraction_and_Validation.png
+    ├── Figure_05_Classification_Report.png
+    ├── Figure_06_Confusion_Matrix.png
+    ├── Figure_07_Historical_Fine_Tuning_Loss_Plot.png
+    └── Figure_08_Misclassification_Analysis.png
+```
+
+---
+
+## 18. Author
+
+**Adekunle Ogunyemi**
+Digital Forensics Examiner, ICDFA CIP-B107
+
+<div align="center">
+
+<sub>Prepared for the ICDFA CIP-B107 module. Findings are limited to the supplied evidence and the test split described in this document.</sub>
+
+</div>
