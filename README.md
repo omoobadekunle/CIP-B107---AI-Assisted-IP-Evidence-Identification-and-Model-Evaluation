@@ -618,7 +618,7 @@ The JSONL split contains leakage. The historical `result.csv` is evaluated on th
 
 ---
 
-## 14. Executive Briefing (Two Pages Max)
+## 14. Executive Briefing 
 
 **Purpose.** This briefing summarises the CIP-B107 lab findings on AI-assisted IP evidence identification.
 
