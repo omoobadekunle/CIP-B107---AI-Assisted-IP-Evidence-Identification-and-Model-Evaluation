@@ -370,7 +370,7 @@ The predictions, classification reports, and confusion matrix were saved to `out
 </p>
 
 <p align="center">
-  <img width="600" height="500" alt="Figure_06_Confusion_Matrix" src="https://github.com/user-attachments/assets/0ea61502-1b7f-4fa0-8565-ac8b0ec6d805" />  
+  <img width="1609" height="969" alt="Figure_06_Confusion_Matrix" src="https://github.com/user-attachments/assets/0ea61502-1b7f-4fa0-8565-ac8b0ec6d805" />  
    <em>Figure 06: Confusion Matrix</em>
 </p>
 
